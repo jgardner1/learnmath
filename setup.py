@@ -15,6 +15,9 @@ setup(
     install_requires=[
         "Pylons>=1.0.1rc1",
         "SQLAlchemy>=0.5",
+        "psycopg2",
+        "flup",
+        "twitter_bootstrap",
     ],
     setup_requires=["PasteScript>=1.6.3"],
     packages=find_packages(exclude=['ez_setup']),

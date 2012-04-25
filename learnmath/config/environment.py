@@ -11,6 +11,8 @@ import learnmath.lib.helpers
 from learnmath.config.routing import make_map
 from learnmath.model import init_model
 
+import twitter_bootstrap
+
 def load_environment(global_conf, app_conf):
     """Configure the Pylons environment via the ``pylons.config``
     object
@@ -21,8 +23,12 @@ def load_environment(global_conf, app_conf):
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     paths = dict(root=root,
                  controllers=os.path.join(root, 'controllers'),
-                 static_files=os.path.join(root, 'public'),
-                 templates=[os.path.join(root, 'templates')])
+                 static_files=[
+                    os.path.join(root, 'public'),
+                    twitter_bootstrap.public_path()],
+                 templates=[
+                    os.path.join(root, 'templates'),
+                    twitter_bootstrap.template_path()])
 
     # Initialize config with the basic options
     config.init_app(global_conf, app_conf, package='learnmath', paths=paths)
