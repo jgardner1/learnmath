@@ -1,0 +1,3 @@
+include learnmath/config/deployment.ini_tmpl
+recursive-include learnmath/public *
+recursive-include learnmath/templates *
